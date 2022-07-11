@@ -1,0 +1,16 @@
+name: Testing env variables
+on: push
+env:
+  CUSTOM: production
+jobs:
+  Testing-env-variables-in-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out repository code
+        uses: actions/checkout@v3
+      - name: node setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - name: run node script
+        run: node index.js

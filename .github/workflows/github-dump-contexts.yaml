@@ -4,6 +4,7 @@ on: push
 jobs:
   dump_contexts_to_log:
     runs-on: ubuntu-latest
+    if: ${{github}}
     steps:
       - name: Dump GitHub context
         id: github_context_step
